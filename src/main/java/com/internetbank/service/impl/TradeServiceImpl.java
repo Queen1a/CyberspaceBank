@@ -1,0 +1,32 @@
+package com.internetbank.service.impl;
+
+
+import com.internetbank.mapper.TradeMapper;
+import com.internetbank.pojo.Result;
+import com.internetbank.pojo.Trade;
+import com.internetbank.service.TradeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+public class TradeServiceImpl implements TradeService {
+
+    @Autowired
+    private TradeMapper tradeMapper;
+
+    @Override
+    public void insert(Trade trade) {
+        trade.setTradeDate(LocalDateTime.now());
+        tradeMapper.insert(trade);
+    }
+
+    @Override
+    public List<Trade> list(Integer cardId, Short type, LocalDateTime begin, LocalDateTime end) {
+        List<Trade> trades = tradeMapper.list(cardId, type, begin, end);
+        return trades;
+    }
+}

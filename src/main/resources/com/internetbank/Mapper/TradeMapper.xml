@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.internetbank.mapper.TradeMapper">
+    <select id="list" resultType="com.internetbank.pojo.Trade">
+        select *
+            from trade
+                <where>
+                    <if test="cardId != null and cardId != ''">
+                        cardId = #{cardId}
+                    </if>
+                    <if test="type != null and type != ''">
+                        and type = #{type}
+                    </if>
+                    <if test="begin != null and end != null">
+                        and tradeDate between #{begin} and #{end}
+                    </if>
+                </where>
+                    order by tradeDate desc
+    </select>
+</mapper>
