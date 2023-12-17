@@ -5,6 +5,7 @@ import com.internetbank.mapper.TradeMapper;
 import com.internetbank.pojo.Result;
 import com.internetbank.pojo.Trade;
 import com.internetbank.service.TradeService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Service
 public class TradeServiceImpl implements TradeService {
 
-    @Autowired
+    @Resource
     private TradeMapper tradeMapper;
 
     @Override

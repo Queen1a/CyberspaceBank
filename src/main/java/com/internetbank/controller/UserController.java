@@ -4,6 +4,7 @@ package com.internetbank.controller;
 import com.internetbank.pojo.Result;
 import com.internetbank.pojo.User;
 import com.internetbank.service.UserService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     /**

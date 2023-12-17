@@ -2,7 +2,7 @@ create database if not exists bank;
 
 use bank;
 
-create table admin
+create table if not exists admin
 (
     adminId   int auto_increment comment 'id'
         primary key,
@@ -13,7 +13,7 @@ create table admin
 )
     comment '管理员';
 
-create table card
+create table if not exists card
 (
     cardId       int auto_increment comment '银行卡Id'
         primary key,
@@ -28,7 +28,7 @@ create table card
 )
     comment '银行卡';
 
-create table trade
+create table if not exists trade
 (
     tradeId   int auto_increment comment '交易Id'
         primary key,
@@ -39,7 +39,7 @@ create table trade
 )
     comment '交易表';
 
-create table user
+create table if not exists user
 (
     userId    int auto_increment comment '用户id'
         primary key,
