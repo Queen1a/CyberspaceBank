@@ -9,5 +9,5 @@ import java.util.List;
 public interface TradeService {
     void insert(Trade trade);
 
-    List<Trade> list(Integer cardId, Short type, LocalDateTime begin, LocalDateTime end);
+    List<Trade> list(String cardNumber1, Short type, LocalDateTime begin, LocalDateTime end);
 }

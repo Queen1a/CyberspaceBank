@@ -12,8 +12,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Trade {
     private Integer tradeId;
-    private Integer cardId;
+    private String cardNumber1;
     private Short type;
     private double money;
     private LocalDateTime tradeDate;
+    private String cardNumber2;
 }

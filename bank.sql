@@ -13,7 +13,6 @@ create table admin
 )
     comment '管理员';
 
-
 create table card
 (
     cardId       int auto_increment comment '银行卡Id'
@@ -31,25 +30,29 @@ create table card
 
 create table trade
 (
-    tradeId   int auto_increment comment '交易Id'
+    tradeId     int auto_increment comment '交易Id'
         primary key,
-    cardId    int      null comment '交易卡id',
-    type      tinyint  not null comment '交易类型',
-    money     double   not null comment '交易金额',
-    tradeDate datetime null comment '交易日期'
+    cardNumber1 char     null comment '交易卡id',
+    type        tinyint  not null comment '交易类型',
+    money       double   not null comment '交易金额',
+    tradeDate   datetime null comment '交易日期',
+    cardNumber2 char     null
 )
     comment '交易表';
 
 create table user
 (
-    userId    int auto_increment comment '用户id'
+    userId    char             not null comment '用户id'
         primary key,
     userName  varchar(10)      not null comment '用户名',
     gender    tinyint unsigned null comment '性别',
     age       int              null comment '年龄',
     telephone varchar(12)      null comment '电话号码',
     address   varchar(20)      null comment '家庭住址',
+    password  char             null,
     constraint user_pk
         unique (userName)
 );
+
+
 

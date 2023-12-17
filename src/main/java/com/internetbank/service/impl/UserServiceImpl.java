@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public User getById(Integer id) {
+    public User getById(String id) {
 
         return userMapper.getById(id);
     }
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(String id) {
         userMapper.delete(id);
     }
 }

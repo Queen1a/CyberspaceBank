@@ -25,8 +25,8 @@ public class TradeServiceImpl implements TradeService {
     }
 
     @Override
-    public List<Trade> list(Integer cardId, Short type, LocalDateTime begin, LocalDateTime end) {
-        List<Trade> trades = tradeMapper.list(cardId, type, begin, end);
+    public List<Trade> list(String cardNumber1, Short type, LocalDateTime begin, LocalDateTime end) {
+        List<Trade> trades = tradeMapper.list(cardNumber1, type, begin, end);
         return trades;
     }
 }

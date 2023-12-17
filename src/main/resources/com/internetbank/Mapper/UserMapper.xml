@@ -20,7 +20,10 @@
                     telephone = #{telephone},
                 </if>
                 <if test="address != null and address != ''">
-                    address = #{address}
+                    address = #{address},
+                </if>
+                <if test="password != null and address != ''">
+                    password = #{password}
                 </if>
             </set>
                 where userId = #{userId}

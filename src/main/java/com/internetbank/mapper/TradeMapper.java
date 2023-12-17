@@ -14,8 +14,8 @@ import java.util.List;
 @Mapper
 public interface TradeMapper {
 
-    @Insert("insert into trade(cardId, type, money, tradeDate) VALUES (#{cardId}, #{type}, #{money}, #{tradeDate})")
+    @Insert("insert into trade(cardNumber1, type, money, tradeDate, cardNumber2) VALUES (#{cardNumber1}, #{type}, #{money}, #{tradeDate}, #{cardNumber2})")
     void insert(Trade trade);
 
-    List<Trade> list(Integer cardId, Short type, LocalDateTime begin, LocalDateTime end);
+    List<Trade> list(String cardNumber1, Short type, LocalDateTime begin, LocalDateTime end);
 }

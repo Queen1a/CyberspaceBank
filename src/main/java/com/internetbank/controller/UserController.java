@@ -20,7 +20,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result getById(@PathVariable Integer id){
+    public Result getById(@PathVariable String id){
         User user = userService.getById(id);
         return Result.success(user);
     }
@@ -53,7 +53,7 @@ public class UserController {
      * @return
      */
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable Integer id){
+    public Result delete(@PathVariable String id){
         userService.delete(id);
         return Result.success();
     }
