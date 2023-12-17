@@ -13,6 +13,7 @@ create table admin
 )
     comment '管理员';
 
+
 create table card
 (
     cardId       int auto_increment comment '银行卡Id'

@@ -3,9 +3,8 @@ package com.internetbank.controller;
 import com.internetbank.pojo.Admin;
 import com.internetbank.pojo.Result;
 import com.internetbank.service.AdminService;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Delete;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @Autowired
+    @Resource
     private AdminService adminService;
 
     /**
