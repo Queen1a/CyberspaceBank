@@ -3,6 +3,7 @@ package com.internetbank.service.impl;
 import com.internetbank.mapper.CardMapper;
 import com.internetbank.pojo.Card;
 import com.internetbank.service.CardService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class CardServiceImpl implements CardService {
 
-    @Autowired
+    @Resource
     private CardMapper cardMapper;
 
     @Override

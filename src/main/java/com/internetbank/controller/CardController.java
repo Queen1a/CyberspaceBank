@@ -3,6 +3,7 @@ package com.internetbank.controller;
 import com.internetbank.pojo.Card;
 import com.internetbank.pojo.Result;
 import com.internetbank.service.CardService;
+import jakarta.annotation.Resource;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.List;
 @RequestMapping("/card")
 public class CardController {
 
-    @Autowired
+    @Resource
     private CardService cardService;
 
     /**

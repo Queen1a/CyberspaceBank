@@ -3,13 +3,14 @@ package com.internetbank.service.impl;
 import com.internetbank.mapper.AdminMapper;
 import com.internetbank.pojo.Admin;
 import com.internetbank.service.AdminService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    @Autowired
+    @Resource
     private AdminMapper adminMapper;
     @Override
     public Admin getById(Integer id) {

@@ -4,6 +4,7 @@ package com.internetbank.controller;
 import com.internetbank.pojo.Result;
 import com.internetbank.pojo.Trade;
 import com.internetbank.service.TradeService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequestMapping("/trade")
 public class TradeController {
 
-    @Autowired
+    @Resource
     private TradeService tradeService;
 
     /**
