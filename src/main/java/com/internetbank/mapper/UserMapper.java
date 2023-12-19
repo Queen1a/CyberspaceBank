@@ -21,4 +21,7 @@ public interface UserMapper {
 
     @Delete("delete from user where userId = #{id}")
     void delete(String id);
+
+    @Select(("select * from user where telephone = #{telephone}"))
+    User getByTelephone(String telephone);
 }

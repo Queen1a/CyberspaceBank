@@ -2,6 +2,7 @@ create database if not exists bank;
 
 use bank;
 
+
 create table if not exists admin
 (
     adminId   int auto_increment comment 'id'

@@ -5,7 +5,6 @@ import com.internetbank.pojo.Result;
 import com.internetbank.pojo.User;
 import com.internetbank.service.UserService;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,6 +13,42 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @PostMapping("/login")
+    public Result login(@RequestBody User user){
+        System.out.println("user:------" + user);
+        if(userService.getByTelephone(user.getTelephone()) != null){
+            System.out.println("yyyyyyyyyyyyyyy");
+            return Result.success(user);
+        }
+        else {
+            System.out.println("nnnnnnnnnnnnnnnnn");
+            return Result.error("登录失败");
+        }
+    }
+
+    @PostMapping("/register")
+    public Result Register(@RequestBody User user){
+        if(userService.getByTelephone(user.getTelephone()) != null){
+            return Result.error("注册失败 ！");
+        }
+        else {
+            userService.insert(user);
+            return Result.success(user);
+        }
+    }
+
+    /**
+     * 根据 telephone 查询 User
+     * @param telephone
+     * @return
+     */
+    @GetMapping("/get")
+    public Result getByTelephone(@RequestParam String telephone){
+        System.out.println(telephone + "==================");
+        User user = userService.getByTelephone(telephone);
+        return Result.success(user);
+    }
 
     /**
      * 根据 id 查询 user
