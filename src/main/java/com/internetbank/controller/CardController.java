@@ -56,7 +56,7 @@ public class CardController {
         t2.setType("转账");
         t2.setNotes("收款");
         if(!Objects.equals(n, payee)){
-            return Result.error("信息错误");
+            return Result.error("请核对收款信息");
         }else{
             cardService.update(c1);
             cardService.update(c2);
