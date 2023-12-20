@@ -83,6 +83,18 @@ public class CardController {
         return Result.success(cards);
     }
 
+    @PostMapping("/getAll")
+    public Result getAll(@RequestParam String userId){
+        List<Card> cards = cardService.getByUserId(userId);
+        Integer num = cards.size();
+        double total = 0;
+        for(Integer i = 0; i < num; i ++){
+            Card card = cards.get(i);
+            total += card.getBalance();
+        }
+        return Result.success(total);
+    }
+
     /**
      * 根据 cardId 更新 card
      * @param card
