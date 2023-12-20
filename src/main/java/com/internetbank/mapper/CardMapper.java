@@ -12,10 +12,10 @@ import java.util.List;
 public interface CardMapper {
 
     @Select("select * from card where cardId = #{id}")
-    Card getByCardId(Integer id);
+    Card getByCardId(String id);
 
     @Select("select * from card where userId = #{id}")
-    List<Card> getByUserId(Integer id);
+    List<Card> getByUserId(String id);
 
     void update(Card card);
 

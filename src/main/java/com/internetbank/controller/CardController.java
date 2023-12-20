@@ -22,20 +22,15 @@ public class CardController {
      * @param id
      * @return
      */
-    @GetMapping("/byCardId/{id}")
-    public Result getByCardId(@PathVariable Integer id){
-        Card card = cardService.getByCardId(id);
-        return Result.success(card);
-    }
 
     /**
      * 根据 userId 查询 card
-     * @param id
+     * @param userId
      * @return
      */
-    @GetMapping("/byUserId/{id}")
-    public Result getByUserId(@PathVariable Integer id){
-        List<Card> cards = cardService.getByUserId(id);
+    @GetMapping("/byUserId")
+    public Result getByUserId(@RequestParam String userId){
+        List<Card> cards = cardService.getByUserId(userId);
         return Result.success(cards);
     }
 

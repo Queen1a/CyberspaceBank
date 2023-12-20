@@ -33,17 +33,11 @@ public class TradeController {
 
     /**
      * 查询 trade
-     * @param cardNumber1
-     * @param type
-     * @param begin
-     * @param end
-     * @return
      */
     @GetMapping()
-    public Result getTrade(String cardNumber1, Short type,
-                           @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime begin,
-                           @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end){
-        List<Trade> trades = tradeService.list(cardNumber1, type, begin, end);
+    public Result getTrade(@RequestParam String cardId){
+
+        List<Trade> trades = tradeService.getTrade(cardId);
         return Result.success(trades);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,13 +22,14 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public void insert(Trade trade) {
-        trade.setTradeDate(LocalDateTime.now());
+        trade.setTradeDate(new Date());
         tradeMapper.insert(trade);
     }
 
     @Override
-    public List<Trade> list(String cardNumber1, Short type, LocalDateTime begin, LocalDateTime end) {
-        List<Trade> trades = tradeMapper.list(cardNumber1, type, begin, end);
-        return trades;
+    public List<Trade> getTrade(String cardId) {
+        return tradeMapper.getTrade(cardId);
     }
+
+
 }

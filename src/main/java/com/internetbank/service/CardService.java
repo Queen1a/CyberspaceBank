@@ -5,9 +5,9 @@ import com.internetbank.pojo.Card;
 import java.util.List;
 
 public interface CardService {
-    Card getByCardId(Integer id);
+    Card getByCardId(String id);
 
-    List<Card> getByUserId(Integer id);
+    List<Card> getByUserId(String id);
 
     void update(Card card);
 

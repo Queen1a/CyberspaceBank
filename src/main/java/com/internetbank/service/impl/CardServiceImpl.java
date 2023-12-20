@@ -17,12 +17,13 @@ public class CardServiceImpl implements CardService {
     private CardMapper cardMapper;
 
     @Override
-    public Card getByCardId(Integer id) {
+    public Card getByCardId(String id) {
         return cardMapper.getByCardId(id);
     }
 
     @Override
-    public List<Card> getByUserId(Integer id) {
+    public List<Card> getByUserId(String id) {
+        System.out.println("2");
         return cardMapper.getByUserId(id);
     }
 

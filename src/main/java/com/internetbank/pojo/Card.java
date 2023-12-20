@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Card {
-    private int cardId;
+    private String cardId;
     private String cardNumber;
     private String cardPassword;
     private String userId;
