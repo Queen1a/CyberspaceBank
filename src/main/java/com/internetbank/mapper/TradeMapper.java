@@ -17,6 +17,6 @@ public interface TradeMapper {
     @Insert("insert into trade VALUES (null,#{cardId},#{type},#{tradeAmount},#{tradeDate},#{tradeAccount},#{balance},#{notes})")
     void insert(Trade trade);
 
-    @Select("select * from trade where cardId = #{cradId}")
+    @Select("select * from trade where cardId = #{cradId} order by tradeDate desc")
     List<Trade> getTrade(String cardId);
 }
