@@ -34,8 +34,9 @@ public class CardController {
         return Result.success(cards);
     }
 
-    @PostMapping("/getAll")
+    @GetMapping("/getAll")
     public Result getAll(@RequestParam String userId){
+
         List<Card> cards = cardService.getByUserId(userId);
         Integer num = cards.size();
         double total = 0;
