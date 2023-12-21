@@ -83,6 +83,11 @@ public class CardController {
         return Result.success(cards);
     }
 
+    @GetMapping("/byTelephone")
+    public Result getByTelephone(@RequestParam String ) {
+
+    }
+
     @GetMapping("/getAll")
     public Result getAll(@RequestParam String userId){
 
