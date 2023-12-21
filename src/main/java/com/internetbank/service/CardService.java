@@ -12,4 +12,6 @@ public interface CardService {
     void update(Card card);
 
     void insert(Card card);
+
+    Card getByTelephone(String telephone);
 }

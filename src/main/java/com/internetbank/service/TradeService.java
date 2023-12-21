@@ -10,4 +10,6 @@ public interface TradeService {
     void insert(Trade trade);
 
     List<Trade> getTrade(String cardId);
+
+    List<Trade> getTradeAll(List<String> cards);
 }

@@ -31,5 +31,10 @@ public class TradeServiceImpl implements TradeService {
         return tradeMapper.getTrade(cardId);
     }
 
+    @Override
+    public List<Trade> getTradeAll(List<String> cards) {
+        return tradeMapper.getTradeAll(cards);
+    }
+
 
 }

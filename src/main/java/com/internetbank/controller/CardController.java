@@ -79,13 +79,15 @@ public class CardController {
      */
     @GetMapping("/byUserId")
     public Result getByUserId(@RequestParam String userId){
+        System.out.print("???");
         List<Card> cards = cardService.getByUserId(userId);
         return Result.success(cards);
     }
 
     @GetMapping("/byTelephone")
-    public Result getByTelephone(@RequestParam String ) {
-
+    public Result getByTelephone(@RequestParam String telephone) {
+        Card card = cardService.getByTelephone(telephone);
+        return Result.success(card);
     }
 
     @GetMapping("/getAll")

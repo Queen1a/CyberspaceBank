@@ -19,4 +19,6 @@ public interface TradeMapper {
 
     @Select("select * from trade where cardId = #{cradId} order by tradeDate desc")
     List<Trade> getTrade(String cardId);
+
+    List<Trade> getTradeAll(List<String> cards);
 }
