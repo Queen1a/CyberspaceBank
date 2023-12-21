@@ -19,7 +19,7 @@ public interface CardMapper {
 
     void update(Card card);
 
-    @Insert("insert into card(cardNumber, cardPassword, userId, balance, status, openDate)" +
-            "values (#{cardNumber}, #{cardPassword}, #{userId}, #{balance}, #{status}, #{openDate})")
+    @Insert("insert into card(cardNumber, cardPassword, userId, balance, status, openDate, telephone)" +
+            "values (#{cardNumber}, #{cardPassword}, #{userId}, #{balance}, #{status}, #{openDate}, #{telephone})")
     void insert(Card card);
 }

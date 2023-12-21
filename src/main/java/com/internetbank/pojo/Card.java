@@ -18,4 +18,5 @@ public class Card {
     private double balance;
     private int status;
     private LocalDateTime openDate;
+    private String telephone;
 }
