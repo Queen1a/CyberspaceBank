@@ -37,4 +37,9 @@ public class CardServiceImpl implements CardService {
         card.setOpenDate(LocalDateTime.now());
         cardMapper.insert(card);
     }
+
+    @Override
+    public Card getByTelephone(String telephone) {
+        return cardMapper.getByTelephone(telephone);
+    }
 }

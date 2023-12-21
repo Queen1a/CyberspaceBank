@@ -22,4 +22,7 @@ public interface CardMapper {
     @Insert("insert into card(cardNumber, cardPassword, userId, balance, status, openDate, telephone)" +
             "values (#{cardNumber}, #{cardPassword}, #{userId}, #{balance}, #{status}, #{openDate}, #{telephone})")
     void insert(Card card);
+
+    @Select("select * from card where telephone = #{telephone} ")
+    Card getByTelephone(String telephone);
 }

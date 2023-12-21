@@ -20,4 +20,13 @@
                 </where>
                     order by tradeDate desc
     </select>
+    <select id="getTradeAll" resultType="com.internetbank.pojo.Trade">
+        select *
+        from trade
+            where cardId in
+            <foreach collection="cards" item="id" separator="," open="(" close=")">
+                #{id}
+            </foreach>
+            order by tradeDate desc
+    </select>
 </mapper>

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/trade")
@@ -38,6 +40,18 @@ public class TradeController {
     public Result getTrade(@RequestParam String cardId){
 
         List<Trade> trades = tradeService.getTrade(cardId);
+        return Result.success(trades);
+    }
+
+    @PostMapping("/All")
+    public Result ResultgetTrageAll(@RequestBody String cards) {
+        cards = cards.substring(10);
+        ArrayList<String> list = new ArrayList<>(List.of(cards.split(",")));
+        String cur = list.get(list.size() - 1).substring(0, 19);
+        list.remove(list.size() - 1);
+        list.add(cur);
+        System.out.println(list);
+        List<Trade> trades = tradeService.getTradeAll(list);
         return Result.success(trades);
     }
 }
