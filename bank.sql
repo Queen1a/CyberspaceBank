@@ -19,6 +19,7 @@ create table card
     balance      double                 null comment '存款',
     status       tinyint unsigned       null comment '账户状态',
     openDate     datetime               null comment '开户日期',
+    telephone    varchar(12)            null,
     constraint card_pk
         unique (cardNumber)
 )
