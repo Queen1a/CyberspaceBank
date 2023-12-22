@@ -4,9 +4,12 @@ package com.internetbank.controller;
 import com.internetbank.pojo.Deposit;
 import com.internetbank.pojo.Result;
 import com.internetbank.service.DepositService;
+import com.sun.tools.jconsole.JConsoleContext;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -18,16 +21,15 @@ public class DepositController {
 
     @PostMapping("/getByUserId")
     public Result getByUserId(@RequestBody String id){
-        System.out.println(id + "==========");
         id = id.substring(11, 29);
-        System.out.println(id + "==========");
-        Deposit deposit = depositService.getById(id);
-        return Result.success();
+        List<Deposit> deposits = depositService.getById(id);
+        return Result.success(deposits);
     }
 
     @PostMapping("/insert")
     public Result insert(@RequestBody Deposit deposit){
-        Deposit deposit1 = depositService.insert(deposit);
-        return Result.success(deposit1);
+        System.out.println(deposit + "=============");
+        depositService.insert(deposit);
+        return Result.success();
     }
 }

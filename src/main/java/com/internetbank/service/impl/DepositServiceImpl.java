@@ -6,6 +6,9 @@ import com.internetbank.service.DepositService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class DepositServiceImpl implements DepositService {
 
@@ -13,12 +16,12 @@ public class DepositServiceImpl implements DepositService {
     private DepositMapper depositMapper;
 
     @Override
-    public Deposit getById(String id) {
+    public List<Deposit> getById(String id) {
         return depositMapper.getById(id);
     }
 
     @Override
-    public Deposit insert(Deposit deposit) {
-        return depositMapper.insert(deposit);
+    public void insert(Deposit deposit) {
+        depositMapper.insert(deposit);
     }
 }

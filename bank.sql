@@ -1,7 +1,3 @@
-create database if not exists bank;
-
-use bank;
-
 create table admin
 (
     adminId   int auto_increment comment 'id'
@@ -23,11 +19,27 @@ create table card
     balance      double                 null comment '存款',
     status       tinyint unsigned       null comment '账户状态',
     openDate     datetime               null comment '开户日期',
-    telephone    varchar(12)            null,
+    telephone    varchar(19)            null,
     constraint card_pk
-        unique (cardNumber)
+        unique (cardNumber),
+    constraint card_pk1
+        unique (telephone)
 )
     comment '银行卡';
+
+create table deposit
+(
+    userId    varchar(20) null comment '存款人身份证号',
+    userName  varchar(10) null comment '存款人姓名',
+    balance   double      null comment '存款额',
+    term      int         null comment '存款期限',
+    startDate varchar(20) null comment '开始日期',
+    endDate   varchar(20) null comment '结束日期',
+    account   varchar(20) null comment '存款账号',
+    rate      double      null comment '利率',
+    name      varchar(20) null comment '产品名称'
+)
+    comment '存款单';
 
 create table trade
 (

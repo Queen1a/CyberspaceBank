@@ -2,8 +2,10 @@ package com.internetbank.service;
 
 import com.internetbank.pojo.Deposit;
 
-public interface DepositService {
-    Deposit getById(String id);
+import java.util.List;
 
-    Deposit insert(Deposit deposit);
+public interface DepositService {
+    List<Deposit> getById(String id);
+
+    void insert(Deposit deposit);
 }
