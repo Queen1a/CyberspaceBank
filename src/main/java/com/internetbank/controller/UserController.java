@@ -22,7 +22,7 @@ public class UserController {
         User user1 = userService.getByTelephone(user.getTelephone());
         if(user1 != null){
             if(Objects.equals(user1.getPassword(), user.getPassword()))
-            return Result.success(user);
+            return Result.success(user1);
         }
         return Result.error("登录失败");
     }
