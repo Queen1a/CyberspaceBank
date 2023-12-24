@@ -7,6 +7,8 @@ import com.internetbank.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -17,14 +19,12 @@ public class UserController {
     @PostMapping("/login")
     public Result login(@RequestBody User user){
         System.out.println("user:------" + user);
-        if(userService.getByTelephone(user.getTelephone()) != null){
-            System.out.println("yyyyyyyyyyyyyyy");
+        User user1 = userService.getByTelephone(user.getTelephone());
+        if(user1 != null){
+            if(Objects.equals(user1.getPassword(), user.getPassword()))
             return Result.success(user);
         }
-        else {
-            System.out.println("nnnnnnnnnnnnnnnnn");
-            return Result.error("登录失败");
-        }
+        return Result.error("登录失败");
     }
 
     @PostMapping("/register")
