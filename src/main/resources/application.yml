@@ -21,10 +21,6 @@ mybatis:
 #阿里云OSS
 aliyun:
   oss:
-    endpoint: https://oss-cn-wuhan-lr.aliyuncs.com
-    accessKeyId: LTAI5tP3tjp22Dy2opBuT413
-    accessKeySecret: Aq6rfgzcA3oa6oMaDDXB2pfwljVQl1
-    bucketName: king6666
 
 #Spring 事务管理日志
 logging:
